@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/IITISM.jpeg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CampusHive</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+      body {
+        background-color: #0d1117;
+      }
+      
+      .preloader {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #0d1117; 
+        z-index: 9999;
+        transition: opacity 0.5s ease;
+        /* ADD THIS to stack items vertically */
+        flex-direction: column; 
+      }
+
+      .preloader.hidden {
+        opacity: 0;
+        visibility: hidden; 
+      }
+
+      .spinner {
+        border: 5px solid rgba(255, 255, 255, 0.2);
+        border-top: 5px solid #8B5CF6;
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        animation: spin 1s linear infinite;
+      }
+
+      /* ADD THIS CSS for the new text */
+      .preloader-text {
+        color: rgba(255, 255, 255, 0.7);
+        margin-top: 20px;
+        font-family: 'Poppins', sans-serif;
+        font-size: 1rem;
+      }
+
+      @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+      }
+    </style>
+  </head>
+  <body>
+
+    <div class="preloader">
+      <div class="spinner"></div>
+      <p class="preloader-text">Waking up the server... please wait 😴🚀</p>
+    </div>
+
+    <div id="root"></div>
+    
+    <script type="module" src="/src/main.jsx"></script>
+    
+  </body>
+</html>
